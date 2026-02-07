@@ -7,10 +7,10 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
         Hi, I'm
-        <span className='font-semibold mx-2 text-white'>Adrian</span>
+        <span className='font-semibold mx-2 text-white'>Gabriel Ling</span>
         👋
         <br />
-        A Software Engineer from Croatia 🇭🇷
+        Software Engineer · Perth, WA 🇦🇺
       </h1>
     );
 
@@ -36,10 +36,12 @@ const HomeInfo = ({ currentStage }) => {
           Led multiple projects to success over the years. <br /> Curious about the impact?
         </p>
 
+        {/* Temporarily hidden until projects are ready
         <Link to='/projects' className='neo-brutalism-white neo-btn'>
           Visit my portfolio
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
+        */}
       </div>
     );
   }

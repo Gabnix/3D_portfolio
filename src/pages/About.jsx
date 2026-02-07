@@ -15,15 +15,16 @@ const About = () => {
         Hello, I'm{" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
           {" "}
-          Adrian
+          Gabriel Ling
         </span>{" "}
         👋
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Software Engineer based in Croatia, specializing in technical
-          education through hands-on learning and building applications.
+          Results-oriented software engineer (B.Comp. 2025) based in Perth, WA.
+          I build reliable web and mobile solutions — I enjoy collaborating with
+          interdisciplinary teams and delivering production-ready software.
         </p>
       </div>
 

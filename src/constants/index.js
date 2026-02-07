@@ -28,53 +28,13 @@ import {
 
 export const skills = [
     {
-        imageUrl: css,
-        name: "CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: express,
-        name: "Express",
-        type: "Backend",
-    },
-    {
-        imageUrl: git,
-        name: "Git",
-        type: "Version Control",
-    },
-    {
-        imageUrl: github,
-        name: "GitHub",
-        type: "Version Control",
-    },
-    {
-        imageUrl: html,
-        name: "HTML",
-        type: "Frontend",
-    },
-    {
         imageUrl: javascript,
         name: "JavaScript",
-        type: "Frontend",
+        type: "Programming",
     },
     {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
-    },
-    {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
-    },
-    {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nextjs,
-        name: "Next.js",
+        imageUrl: react,
+        name: "React",
         type: "Frontend",
     },
     {
@@ -83,19 +43,34 @@ export const skills = [
         type: "Backend",
     },
     {
-        imageUrl: react,
-        name: "React",
+        imageUrl: express,
+        name: "Express",
+        type: "Backend",
+    },
+    {
+        imageUrl: html,
+        name: "HTML",
         type: "Frontend",
     },
     {
-        imageUrl: redux,
-        name: "Redux",
-        type: "State Management",
+        imageUrl: css,
+        name: "CSS",
+        type: "Frontend",
     },
     {
-        imageUrl: sass,
-        name: "Sass",
-        type: "Frontend",
+        imageUrl: mongodb,
+        name: "MongoDB",
+        type: "Database",
+    },
+    {
+        imageUrl: git,
+        name: "Git",
+        type: "Tooling",
+    },
+    {
+        imageUrl: github,
+        name: "GitHub",
+        type: "Tooling",
     },
     {
         imageUrl: tailwindcss,
@@ -111,75 +86,59 @@ export const skills = [
 
 export const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
-        icon: starbucks,
-        iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "React Native Developer",
-        company_name: "Tesla",
-        icon: tesla,
-        iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Web Developer",
-        company_name: "Shopify",
-        icon: shopify,
-        iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Full stack Developer",
-        company_name: "Meta",
+        title: "Software Developer",
+        company_name: "Ear Science Institute Australia",
         icon: meta,
         iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
+        date: "Jan 2026 - Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Contributed to the SoundSmiles project (Flutter) supporting iOS/Android development and testing.",
+            "Worked on UX, usability testing, research documentation and community consultation.",
+            "Collaborated in an interdisciplinary Agile team to deliver culturally safe digital health tools.",
+        ],
+    },
+    {
+        title: "Software Developer",
+        company_name: "Healthy Connections",
+        icon: shopify,
+        iconBg: "#b7e4c7",
+        date: "Nov 2024 – Jul 2025",
+        points: [
+            "Designed telehealth features and patient data workflows, improving usability and speed.",
+            "Refactored UI to reduce patient data input time by ~50% and produced production-ready mobile builds.",
+            "Iterated quickly from stakeholder testing feedback to deliver robust releases.",
+        ],
+    },
+    {
+        title: "Software Developer",
+        company_name: "Curtin HIVE",
+        icon: starbucks,
+        iconBg: "#accbe1",
+        date: "Nov 2023 – Feb 2024",
+        points: [
+            "Built a virtual tour of a rural clinic with Unity, supporting teleportation navigation and 360° assets.",
+            "Optimized performance for Meta Quest and ensured stable frame rates during deployment.",
+            "Improved user navigation flow and reduced friction during user testing.",
         ],
     },
 ];
 
 export const socialLinks = [
+    // {
+    //     name: "Contact",
+    //     iconUrl: contact,
+    //     link: "/contact",
+    // },
+    // {
+    //     name: "GitHub",
+    //     iconUrl: github,
+    //     link: "https://github.com/gabnix",
+    // },
     {
-        name: 'Contact',
-        iconUrl: contact,
-        link: '/contact',
-    },
-    {
-        name: 'GitHub',
-        iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
-    },
-    {
-        name: 'LinkedIn',
+        name: "LinkedIn",
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
-    }
+        link: "https://www.linkedin.com/in/gabnix/",
+    },
 ];
 
 export const projects = [
