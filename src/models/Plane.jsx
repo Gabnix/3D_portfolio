@@ -5,7 +5,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 export function Plane({ isRotating, ...props }) {
   const ref = useRef();
   // Load the 3D model and its animations
-  const { scene, animations } = useGLTF("./assets/3d/plane.glb");
+  const { scene, animations } = useGLTF(`${import.meta.env.BASE_URL}assets/3d/plane.glb`);
   // Get animation actions associated with the plane
   const { actions } = useAnimations(animations, ref);
 
