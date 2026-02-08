@@ -16,14 +16,20 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 2) {
     return (
       <div className='info-box'>
-        <p className='font-medium sm:text-xl text-center'>
-          Worked with many companies <br /> and picked up many skills along the way
+        <p className='font-medium sm:text-xl text-center mb-5'>
+          Worked with companies and picked up skills along the way
         </p>
 
-        <Link to='/about' className='neo-brutalism-white neo-btn'>
-          Learn more
-          <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
-        </Link>
+        <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 w-full'>
+          <Link to='/about' className='neo-brutalism-white neo-btn flex-1'>
+            Learn more
+            <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+          </Link>
+          <Link to='/contact' className='neo-brutalism-white neo-btn flex-1'>
+            Contact me
+            <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+          </Link>
+        </div>
       </div>
     );
   }
@@ -32,15 +38,13 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-          Led multiple projects to success over the years. <br /> Curious about the impact?
+          Need a project done or looking for a developer?
         </p>
 
-        {/* Temporarily hidden until projects are ready
-        <Link to='/projects' className='neo-brutalism-white neo-btn'>
-          Visit my portfolio
+        <Link to='/contact' className='neo-brutalism-white neo-btn mt-4'>
+          Let's talk
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
-        */}
       </div>
     );
   }
@@ -48,15 +52,15 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 4) {
     return (
       <div className='info-box'>
-      <p className='font-medium sm:text-xl text-center'>
-        Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
-      </p>
+        <p className='font-medium sm:text-xl text-center'>
+          Want to know more about my work experience?
+        </p>
 
-      <Link to='/contact' className='neo-brutalism-white neo-btn'>
-        Let's talk
-        <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
-      </Link>
-    </div>
+        <Link to='/about' className='neo-brutalism-white neo-btn mt-4'>
+          View experience
+          <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+        </Link>
+      </div>
     );
   }
 
