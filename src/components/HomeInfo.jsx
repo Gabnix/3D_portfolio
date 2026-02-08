@@ -9,7 +9,7 @@ const HomeInfo = ({ currentStage }) => {
         Hi, I'm
         <span className='font-semibold mx-2 text-white'>Jim Ling</span>
         <br />
-        Software Engineer · Perth, WA 🇦🇺
+        Software Engineer · Perth, WA
       </h1>
     );
 
