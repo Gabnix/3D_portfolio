@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
@@ -20,55 +20,87 @@ const Contact = () => {
   const handleFocus = () => setCurrentAnimation("walk");
   const handleBlur = () => setCurrentAnimation("idle");
 
+  // Load Google reCAPTCHA script dynamically if a site key is provided
+  useEffect(() => {
+    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    if (!siteKey) return;
+
+    const existing = document.querySelector(`script[data-recaptcha="${siteKey}"]`);
+    if (existing) return;
+
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+    script.async = true;
+    script.defer = true;
+    script.setAttribute("data-recaptcha", siteKey);
+    document.head.appendChild(script);
+
+    return () => {
+      // do not remove script to avoid reloading while navigating
+    };
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setCurrentAnimation("hit");
-
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: "Thank you for your message 😃",
-            type: "success",
-          });
-
-          setTimeout(() => {
-            hideAlert(false);
-            setCurrentAnimation("idle");
-            setForm({
-              name: "",
-              email: "",
-              message: "",
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          setCurrentAnimation("idle");
-
-          showAlert({
-            show: true,
-            text: "I didn't receive your message 😢",
-            type: "danger",
+    (async () => {
+      try {
+        // optional: run reCAPTCHA if site key provided
+        let recaptchaToken = null;
+        const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+        if (siteKey && window.grecaptcha) {
+          await new Promise((resolve) =>
+            window.grecaptcha.ready(() => resolve())
+          );
+          // use 'submit' as action
+          recaptchaToken = await window.grecaptcha.execute(siteKey, {
+            action: "submit",
           });
         }
-      );
+
+        const templateParams = {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          "g-recaptcha-response": recaptchaToken,
+        };
+
+        await emailjs.send(
+          import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+          templateParams,
+          import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        );
+
+        setLoading(false);
+        showAlert({
+          show: true,
+          text: "Thank you for your message 😃",
+          type: "success",
+        });
+
+        setTimeout(() => {
+          hideAlert(false);
+          setCurrentAnimation("idle");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        }, 3000);
+      } catch (error) {
+        setLoading(false);
+        console.error(error);
+        setCurrentAnimation("idle");
+
+        showAlert({
+          show: true,
+          text: "I didn't receive your message 😢",
+          type: "danger",
+        });
+      }
+    })();
   };
 
   return (
