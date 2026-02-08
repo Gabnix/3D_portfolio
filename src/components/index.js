@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import HomeInfo from "./HomeInfo";
 import { ErrorBoundary } from "./ErrorBoundary";
+import Typewriter from "./Typewriter";
 
 export {
     CTA,
@@ -13,5 +14,6 @@ export {
     Navbar,
     Footer,
     HomeInfo,
-    ErrorBoundary
+    ErrorBoundary,
+    Typewriter
 }

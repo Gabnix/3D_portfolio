@@ -3,7 +3,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import { CTA } from "../components";
+import { CTA, Typewriter } from "../components";
 import { experiences, skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -16,15 +16,24 @@ const About = () => {
         <span className='blue-gradient_text font-semibold drop-shadow'>
           {" "}
           Jim Ling
-        </span>{" "}
-        👋
+        </span>
+        <span className='ml-4 text-lg text-slate-600 font-medium'>
+          I'm a&nbsp;
+          <Typewriter
+            words={["software developer", "peer mentor", "volunteer"]}
+            typingSpeed={80}
+            deletingSpeed={40}
+            pause={1400}
+          />
+        </span>
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Results-oriented software engineer (B.Comp. 2025) based in Perth, WA.
-          I build reliable web and mobile solutions — I enjoy collaborating with
-          interdisciplinary teams and delivering production-ready software.
+          Results-oriented and passionate software developer with hands-on
+          professional experience delivering reliable solutions in agile
+          environments. Strong team collaborator with a proven record of
+          completing tasks on time and contributing to high-quality outcomes.
         </p>
       </div>
 
