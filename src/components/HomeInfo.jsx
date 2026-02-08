@@ -5,7 +5,7 @@ import { arrow } from "../assets/icons";
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
-      <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
+      <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5 home-info-transition'>
         Hi, I'm
         <span className='font-semibold mx-2 text-white'>Jim Ling</span>
         <br />
@@ -15,7 +15,7 @@ const HomeInfo = ({ currentStage }) => {
 
   if (currentStage === 2) {
     return (
-      <div className='info-box'>
+      <div className='info-box home-info-transition'>
         <p className='font-medium sm:text-xl text-center'>
           Worked with many companies <br /> and picked up many skills along the way
         </p>
@@ -30,7 +30,7 @@ const HomeInfo = ({ currentStage }) => {
 
   if (currentStage === 3) {
     return (
-      <div className='info-box'>
+      <div className='info-box home-info-transition'>
         <p className='font-medium text-center sm:text-xl'>
           Led multiple projects to success over the years. <br /> Curious about the impact?
         </p>
@@ -47,7 +47,7 @@ const HomeInfo = ({ currentStage }) => {
 
   if (currentStage === 4) {
     return (
-      <div className='info-box'>
+      <div className='info-box home-info-transition'>
       <p className='font-medium sm:text-xl text-center'>
         Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
       </p>

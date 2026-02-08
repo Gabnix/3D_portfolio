@@ -5,6 +5,7 @@ import sakura from "../assets/sakura.mp3";
 import { HomeInfo, Loader, ErrorBoundary } from "../components";
 import { soundoff, soundon } from "../assets/icons";
 import { Bird, Island, Plane, Sky } from "../models";
+import HomeContext from "../contexts/HomeContext";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -14,6 +15,11 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+  const resetHome = () => {
+    setCurrentStage(1);
+    setIsRotating(false);
+  };
 
   useEffect(() => {
     if (isPlayingMusic) {
@@ -58,10 +64,11 @@ const Home = () => {
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
-    <section className='w-full h-screen relative'>
-      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
-        {currentStage && <HomeInfo currentStage={currentStage} />}
-      </div>
+    <HomeContext.Provider value={{ resetHome }}>
+      <section className='w-full h-screen relative'>
+        <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+          {currentStage && <HomeInfo currentStage={currentStage} />}
+        </div>
 
       <ErrorBoundary>
         <Canvas
@@ -115,6 +122,7 @@ const Home = () => {
         />
       </div>
     </section>
+    </HomeContext.Provider>
   );
 };
 

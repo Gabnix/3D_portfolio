@@ -1,16 +1,17 @@
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { logo } from "../assets/images";
+import { useHomeContext } from "../contexts/HomeContext";
 
 const Navbar = () => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const { resetHome } = useHomeContext();
 
   const handleLogoClick = (e) => {
-    // If already on homepage, reload to reset the stage
-    if (location.pathname === '/') {
+    // If already on homepage, reset the stage smoothly
+    if (location.pathname === '/' && resetHome) {
       e.preventDefault();
-      window.location.reload();
+      resetHome();
     }
     // Otherwise, let the NavLink navigate normally
   };
